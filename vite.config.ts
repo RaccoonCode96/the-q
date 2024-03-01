@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react-swc';
+import react from '@vitejs/plugin-react';
 import styleX from 'vite-plugin-stylex';
 import svgr from 'vite-plugin-svgr';
 // https://vitejs.dev/config/
