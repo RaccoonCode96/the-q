@@ -40,6 +40,10 @@ const styles = stylex.create({
 		flexWrap: 'wrap',
 		padding: 100,
 		position: 'relative',
+		fontFamily: `'Noto Sans KR', sans-serif`,
+		fontOpticalSizing: 'auto',
+		fontStyle: 'normal',
+		lineHeight: 'normal',
 	},
 	goList: {
 		width: 300,
@@ -91,7 +95,6 @@ const miniCardStyles = stylex.create({
 		borderRadius: 20,
 		transformStyle: 'preserve-3d',
 		perspectiveOrigin: 'center',
-		backfaceVisibility: 'visible',
 		transition: '0.7s',
 		position: 'relative',
 		cursor: 'pointer',
@@ -102,7 +105,6 @@ const miniCardStyles = stylex.create({
 	common: {
 		width: '100%',
 		height: '100%',
-		backfaceVisibility: 'hidden',
 		textAlign: 'center',
 		fontSize: '100px',
 		borderRadius: 15,
@@ -170,7 +172,6 @@ const cardStyles = stylex.create({
 		borderRadius: 20,
 		transformStyle: 'preserve-3d',
 		perspectiveOrigin: 'center',
-		backfaceVisibility: 'visible',
 		transition: '0.7s',
 		position: 'relative',
 		cursor: 'pointer',
@@ -189,8 +190,8 @@ const cardStyles = stylex.create({
 		width: '100%',
 		height: '100%',
 		backfaceVisibility: 'hidden',
+
 		textAlign: 'center',
-		fontSize: '100px',
 		borderRadius: 15,
 		display: 'flex',
 		alignItems: 'center',
@@ -209,15 +210,16 @@ const cardStyles = stylex.create({
 
 	cardBack: {
 		position: 'relative',
+		backgroundColor: colors.red500,
 	},
 	idx: {
 		position: 'absolute',
 		color: colors.white,
 		top: 0,
 		left: 40,
+		fontSize: 100,
 	},
 	backContent: {
-		backgroundColor: colors.red500,
 		color: colors.white,
 		display: 'flex',
 		flexDirection: 'column',
@@ -261,18 +263,22 @@ const Card = ({
 				onClick={handleClick}
 				{...stylex.props(cardStyles.card, isFront && cardStyles.isFront)}
 			>
-				<div {...stylex.props(cardStyles.common, cardStyles.cardFront)}>
+				<div
+					{...stylex.props(cardStyles.common, cardStyles.cardFront)}
+					style={{ backfaceVisibility: 'hidden' }}
+				>
 					{question}
 				</div>
-				<div {...stylex.props(cardStyles.common, cardStyles.cardBack)}>
+				<div
+					{...stylex.props(
+						cardStyles.common,
+						cardStyles.cardBack,
+						colorStyles[color]
+					)}
+					style={{ backfaceVisibility: 'hidden' }}
+				>
 					<div {...stylex.props(cardStyles.idx)}>{idx}</div>
-					<div
-						{...stylex.props(
-							cardStyles.common,
-							cardStyles.backContent,
-							colorStyles[color]
-						)}
-					>
+					<div {...stylex.props(cardStyles.backContent)}>
 						<QuestionIcon {...stylex.props(cardStyles.icon)} />
 						<div {...stylex.props(cardStyles.title)}>{type}</div>
 					</div>
