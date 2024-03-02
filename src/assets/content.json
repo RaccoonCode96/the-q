@@ -3,17 +3,7 @@
 	"content": [
 		{
 			"type": "시작",
-			"question": "나의 이름은?",
-			"priority": 1
-		},
-		{
-			"type": "시작",
-			"question": "나의 나이는?",
-			"priority": 1
-		},
-		{
-			"type": "시작",
-			"question": "나의 직업은?",
+			"question": "내가 사는 곳?",
 			"priorityr": 1
 		},
 		{
@@ -23,8 +13,18 @@
 		},
 		{
 			"type": "시작",
-			"question": "내가 사는 곳?",
+			"question": "나의 직업은?",
 			"priorityr": 1
+		},
+		{
+			"type": "시작",
+			"question": "나의 나이는?",
+			"priority": 1
+		},
+		{
+			"type": "시작",
+			"question": "나의 이름은?",
+			"priority": 1
 		},
 		{ "type": "음식", "question": "나의 최애 음식은?" },
 		{
