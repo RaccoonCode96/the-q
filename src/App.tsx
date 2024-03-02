@@ -32,13 +32,12 @@ const types = [...new Set(QList.content.map(({ type }) => type))].map(
 const styles = stylex.create({
 	app: {
 		width: '100%',
-		height: '100%',
+		height: 'fitContent',
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
 		gap: 30,
 		flexWrap: 'wrap',
-		padding: 100,
 		position: 'relative',
 		fontFamily: `'Noto Sans KR', sans-serif`,
 		fontOpticalSizing: 'auto',
@@ -46,6 +45,7 @@ const styles = stylex.create({
 		lineHeight: 'normal',
 	},
 	goList: {
+		marginTop: 100,
 		width: 300,
 		height: 300,
 	},
@@ -167,8 +167,8 @@ const cardStyles = stylex.create({
 		display: 'none',
 	},
 	card: {
-		width: 420,
-		height: 680,
+		width: 300,
+		height: 480,
 		borderRadius: 20,
 		transformStyle: 'preserve-3d',
 		perspectiveOrigin: 'center',
@@ -187,10 +187,9 @@ const cardStyles = stylex.create({
 	},
 
 	common: {
-		width: '100%',
-		height: '100%',
+		height: 480,
+		width: 300,
 		backfaceVisibility: 'hidden',
-
 		textAlign: 'center',
 		borderRadius: 15,
 		display: 'flex',
@@ -206,6 +205,7 @@ const cardStyles = stylex.create({
 		padding: 20,
 		fontSize: 40,
 		backgroundColor: colors.white,
+		border: '2px solid gray',
 	},
 
 	cardBack: {
@@ -217,7 +217,7 @@ const cardStyles = stylex.create({
 		color: colors.white,
 		top: 0,
 		left: 40,
-		fontSize: 100,
+		fontSize: 60,
 	},
 	backContent: {
 		color: colors.white,
@@ -227,8 +227,8 @@ const cardStyles = stylex.create({
 	},
 	icon: {
 		fill: colors.white,
-		width: 240,
-		height: 240,
+		width: 180,
+		height: 180,
 	},
 	title: {
 		fontSize: 70,
