@@ -160,7 +160,7 @@ const MiniCard = ({
 const cardStyles = stylex.create({
 	layout: {
 		position: 'absolute',
-		top: 100,
+		top: 30,
 		userSelect: 'none',
 	},
 	hidden: {
